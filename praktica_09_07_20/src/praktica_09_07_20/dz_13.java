@@ -17,11 +17,12 @@ public class dz_13 {
 		int test0_mark [][] =  {{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0}};
 		int test0_cicl [][] =  {{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0}};
 		int test0_x0=0,test0_y0=0,test0_xf=2,test0_yf=3;
-		System.out.println("первый тест работы программы - без стен \n");
+		System.out.println("первый тест работы программы - без стен");
+		System.out.println("Ќачальное положение точки x="+test0_x0+" y="+test0_y0);
+		System.out.println(" онечное положение точки x="+test0_xf+" y="+test0_yf);
 		zadanie(test0_cicl,test0_mark,test0_x0,test0_y0,test0_xf,test0_yf);
 		newplace.clear();
 		returnpathitem.clear();
-
 
 		int test1_mark [][] =  
 			{
@@ -36,7 +37,9 @@ public class dz_13 {
 				{0,0,0,0,0},
 				{0,0,0,0,0}};
 		int test1_x0=0,test1_y0=0,test1_xf=0,test1_yf=4;
-		System.out.println("второй тест работы программы - есть стены и точка достижима \n");
+		System.out.println("второй тест работы программы - есть стены и точка достижима");
+		System.out.println("Ќачальное положение точки x="+test1_x0+" y="+test1_y0);
+		System.out.println(" онечное положение точки x="+test1_xf+" y="+test1_yf);
 		zadanie(test1_mark,test1_cicl,test1_x0,test1_y0,test1_xf,test1_yf);
 		newplace.clear();
 		returnpathitem.clear();
@@ -55,7 +58,9 @@ public class dz_13 {
 				{0,0,0,0,0},
 				{0,0,0,0,0}};
 		int test2_x0=0,test2_y0=0,test2_xf=0,test2_yf=4;
-		System.out.println("второй тест работы программы - есть стены и точка недостижима \n");
+		System.out.println("“ретий тест работы программы - есть стены и точка недостижима");
+		System.out.println("Ќачальное положение точки x="+test2_x0+" y="+test2_y0);
+		System.out.println(" онечное положение точки x="+test2_xf+" y="+test2_yf);
 		zadanie(test2_mark,test2_cicl,test2_x0,test2_y0,test2_xf,test2_yf);
 		newplace.clear();
 		returnpathitem.clear();
@@ -73,7 +78,11 @@ public class dz_13 {
 				{0,0,0,0,0},
 				{0,0,0,0,0}};
 		int test3_x0=0,test3_y0=0,test3_xf=0,test3_yf=3;
-		System.out.println("третий тест работы программы -точка находитс€ в стене \n");
+		System.out.println("„етвертый тест работы программы -точка находитс€ в стене");
+		System.out.println("Ќачальное положение точки "
+				+ "x="+test3_x0+" y="+test3_y0);
+		System.out.println(" онечное положение точки x="+test3_xf+" y"
+				+ "="+test3_yf);
 		zadanie(test3_mark,test3_cicl,test3_x0,test3_y0,test3_xf,test3_yf);
 		newplace.clear();
 		returnpathitem.clear();
@@ -179,18 +188,14 @@ public class dz_13 {
 		matrmark[x0][y0] = 1;
 		boolean provsize = true;
 
-		System.out.println("ѕринт значений свободных €чеек");
+		System.out.println("«начений свободных €чеек");
 		printmatrix(matrmark);
-		System.out.println("ѕринт значений знач €чеек");
+		System.out.println("«начений знач €чеек");
 		printmatrix(matrcicl);
 		if(matrmark[xf][yf]==0) {
 		//перва€ волна
 		int sizewaveold = newplace.size();
 		wave(matrmark,matrcicl,x0,y0);
-		System.out.println("ѕринт значений свободных €чеек");
-		printmatrix(matrmark);
-		System.out.println("ѕринт значений знач €чеек");
-		printmatrix(matrcicl);
 		
 		//проверка распространени€ первой волны 
 		provsize = newplace.size()!=sizewaveold;
@@ -211,19 +216,19 @@ public class dz_13 {
 				System.out.println("¬олна больше не может распростран€тс€. ¬ы не можете добрать до точки");
 				break;
 			}
-			System.out.println("ѕринт значений свободных €чеек");
-			printmatrix(matrmark);
-			System.out.println("ѕринт значений знач €чеек");
-			printmatrix(matrcicl);
 
 		}
+		System.out.println("«начений свободных €чеек");
+		printmatrix(matrmark);
+		System.out.println("«начений знач €чеек");
+		printmatrix(matrcicl);
 		System.out.println();
 		//второе значение проверка,на распространение волны вообще,если она не распростран€лась - точка в стене
 		if(matrmark[xf][yf] == 1 ) {
 			returnpathitem = returnpath(matrcicl,xf,yf);
-			for(int i[] : returnpathitem) {
+			System.out.println("ѕуть");
+			for(int i[] : returnpathitem) 
 				System.out.println("x = "+i[0]+" y = "+i[1]);
-			}
 		}
 		}else {
 			System.out.println("точка в стене");

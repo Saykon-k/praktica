@@ -21,7 +21,6 @@ public class razminka_5 {
 			}
 		}
 		int diff_pos = min_index-max_index;
-		list  = list.
 	}
 
 }

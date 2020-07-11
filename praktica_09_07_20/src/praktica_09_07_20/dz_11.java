@@ -3,32 +3,35 @@ package praktica_09_07_20;
 public class dz_11 {
 
 	public static void main(String[] args) {
-		int matr[][] = {{1,1,1},{1,1,1},{1,1,0}};
-		//System.out.println(gorizont(matr));
+		int matr[][] = {{0,0,0,0,0},{1,0,1,1,1},{1,1,0,1,1},{1,1,1,0,1}};
+		System.out.println(matr[0].length);
+		System.out.println(gorizont(matr));
 		//System.out.println(vertical(matr));
 		System.out.println(diagonal(matr));
 
 		printmatrix(matr);
 	}
 	public static int gorizont(int matr[][]) {
-		//вводим две перменные промежуточную и "насто€щую
+		//вводим две перменные промежуточную и "насто€щую"
 		int len = -1;
 		int pobochlen = 0;
 		for(int i = 0; i<matr.length;i++) {
 			for(int j = 0; j<matr[0].length;j++) {
 				if(matr[i][j]==0) {
 					pobochlen++;
-				}else {
-					if(pobochlen>len) {
-						len = pobochlen;
 					}
-					pobochlen=0;
-				} 
+				else {
+					   if(pobochlen>len) len = pobochlen;
+					   pobochlen=0;
+				}
 			}
 			//об€зательна€ проверка, так как может быть так, что есть одна полностью заполненна€ строчка
 			//и на след строчке ноль, поэтому обнуление и проверка
 			if(pobochlen>len) {
 				len = pobochlen;
+			}
+			if(pobochlen == matr[0].length) {
+				break;
 			}
 			pobochlen=0;
 		}
@@ -48,6 +51,9 @@ public class dz_11 {
 					pobochlen=0;
 				}
 			}
+			if(pobochlen == matr.length) {
+				break;
+			}
 			if(pobochlen>len) {
 				len = pobochlen;
 			}
@@ -60,7 +66,7 @@ public class dz_11 {
 		int pobochlen = 0;
 		//нижн€€ диагональ главна€
 		for(int j = 0; j<matr.length;j++ ) {
-		for(int i = 0; i < matr[0].length-j;i++) {
+		for(int i = 0; i < matr.length-j;i++) {
 			if(matr[i+j][i]==0) {
 				pobochlen++;
 			}else {
@@ -77,7 +83,7 @@ public class dz_11 {
 		}
 		//верхн€€ диагональ главн€ 
 		for(int j = 0; j<matr.length;j++ ) {
-			for(int i = 0; i < matr[0].length-j;i++) {
+			for(int i = 0; i < matr.length-j;i++) {
 				if(matr[i][i+j]==0) {
 					pobochlen++;
 				}else {
@@ -94,7 +100,7 @@ public class dz_11 {
 			}
 		//побочна€ дигональ снизу обход
 		for(int j = 0; j< matr.length;j++) {
-		for(int i =  matr[0].length-1; i > -1+j;i--) {
+		for(int i =  matr.length-1; i > -1+j;i--) {
 			if(matr[i][matr.length-1-i+j]==0) {
 				pobochlen++;
 			}else {
@@ -111,7 +117,7 @@ public class dz_11 {
 		}
 		//побочна€ диагональ сверху обход
 		for(int j = 0; j < matr.length;j++) {
-		for(int i =  matr[0].length-1; i > -1+j;i--) {
+		for(int i =  matr.length-1; i > -1+j;i--) {
 			if(matr[i-j][matr.length-1-i]==0) {
 				pobochlen++;
 			}else {

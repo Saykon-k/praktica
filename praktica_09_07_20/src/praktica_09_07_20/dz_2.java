@@ -6,26 +6,27 @@ public class dz_2 {
 	public static void main(String args[]) {
 		int matr[][] = new int[5][4];	
 		fillmatr(matr);
+		System.out.println("Исходная матрица ");
 		printmatrix(matr);
+		System.out.println("\nПосле сортировки ");
 		sort(matr);
-		System.out.println();
 		printmatrix(matr);
 		
 	}
 	public static void fillmatr(int matr[][]) {
 		for(int i = 0 ; i<matr.length;i++) {
 			for(int i1 = 0; i1<matr[0].length; i1++) {
-				matr[i][i1] = (int)(Math.random()*31);
+				matr[i][i1] = (int)(Math.random()*129);
 
 			}
 		}
 	}
 	public static void printmatrix(int matr[][]) {
-		for(int i = 0; i < matr.length;i++) {
-			for(int j = 0; j < matr[0].length;j++) {
-				System.out.print(matr[i][j]+" ");
-			}
-			System.out.println();
+		for (int i = 0; i < matr.length; i++) {
+            for (int j = 0; j < matr[i].length; j++) {
+                System.out.printf("%4d\t", matr[i][j]);
+            }
+            System.out.println();
 		}
 	}
 	public static void sort(int[][] array) {
