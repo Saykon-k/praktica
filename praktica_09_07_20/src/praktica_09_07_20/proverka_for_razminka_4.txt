@@ -1,0 +1,29 @@
+long countD = 0,countS = 0,countS1 = 0 ;
+        long l [] = new long [50_000_000];
+        for(int i = 0; i < 50_000_000; i++) l[i]=i;
+        long time = timer(() -> {
+
+        for(int i = 0; i < 50_000_000; i++) prov(l[i]);
+        }, TimeUnit.NANOSECONDS);
+        countD+= time;
+        //System.out.println(time+" без строк");
+        
+        
+        
+        time = timer(() -> {
+
+            for(int i = 0; i < 50_000_000; i++) prov1(l[i]);
+            }, TimeUnit.NANOSECONDS);
+        countS+= time;
+
+          //  System.out.println(time+" со строками");
+            
+            
+         time = timer(() -> {
+                for(int i = 0; i < 50_000_000; i++) prov2(l[i]);
+                }, TimeUnit.NANOSECONDS);
+         countS1+= time;
+          //System.out.println(time+" со строками + еще Integer.parse int");
+        System.out.println(countD+" время работы функции auth");
+        System.out.println(countS+" время работы функции str");
+//Вставьте этот кусок кода внуть функции main
