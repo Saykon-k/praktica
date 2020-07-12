@@ -24,6 +24,7 @@ public class dz3_fib extends JComponent{
 	public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         g2.scale(7, 7);
+        //вычисление входных данных
         ArrayList<double []> num =fib_find(a_real,b_real,10,-1);//максимум функции
         ArrayList<double []> num1 =fib_find(a_real,b_real,10,1);//минимум
         //настройка шрифта
@@ -92,7 +93,7 @@ public class dz3_fib extends JComponent{
 		return b;
 	}
 	static double f(double x){
-	    return  Math.pow(x,0.5);
+	    return  Math.sin(x)+x;
 	}
 	public static ArrayList<double []> fib_find(float a1, float b1,int n,int i){
 	   	 ArrayList<double []> num = new ArrayList<double []>();

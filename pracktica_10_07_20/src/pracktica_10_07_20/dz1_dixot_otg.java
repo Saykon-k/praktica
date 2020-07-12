@@ -22,6 +22,7 @@ public class dz1_dixot_otg extends JComponent {
 	public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         g2.scale(7, 7);
+        //входные данные вычисл€ютс€ здесь и записываютс€ и отрисовываютс€
         ArrayList<double []> num =dixotpoint(a_real,b_real,0.0001,1000,-1);//максимум функции
         ArrayList<double []> num1 =dixotpoint(a_real,b_real,001,1000,1);//минимум
         //настройка шрифта
