@@ -10,10 +10,7 @@ public class dz1_methdo_dixot extends JComponent {
     public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         g2.scale(3, 3);
-        for(double i = 0; i<1000;i+=0.01) g2.draw(new Line2D.Double(i, 100-Math.sin(i), i+1, 100-Math.sin(i)));
-    
-
-
+        //for(double i = 0; i<1000;i+=0.01) g2.draw(new Line2D.Double(i, 100-Math.sin(i), i+1, 100-Math.sin(i)));
     }
  
 
