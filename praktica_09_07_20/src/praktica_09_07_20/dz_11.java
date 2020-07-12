@@ -3,35 +3,32 @@ package praktica_09_07_20;
 public class dz_11 {
 
 	public static void main(String[] args) {
-		int matr[][] = {{0,0,0,0,0},{1,0,1,1,1},{1,1,0,1,1},{1,1,1,0,1}};
-		System.out.println(matr[0].length);
-		System.out.println(gorizont(matr));
+		int matr[][] = {{1,1,1},{1,1,1},{1,1,0}};
+		//System.out.println(gorizont(matr));
 		//System.out.println(vertical(matr));
 		System.out.println(diagonal(matr));
 
 		printmatrix(matr);
 	}
 	public static int gorizont(int matr[][]) {
-		//вводим две перменные промежуточную и "насто€щую"
+		//вводим две перменные промежуточную и "насто€щую
 		int len = -1;
 		int pobochlen = 0;
 		for(int i = 0; i<matr.length;i++) {
 			for(int j = 0; j<matr[0].length;j++) {
 				if(matr[i][j]==0) {
 					pobochlen++;
+				}else {
+					if(pobochlen>len) {
+						len = pobochlen;
 					}
-				else {
-					   if(pobochlen>len) len = pobochlen;
-					   pobochlen=0;
+					pobochlen=0;
 				}
 			}
 			//об€зательна€ проверка, так как может быть так, что есть одна полностью заполненна€ строчка
 			//и на след строчке ноль, поэтому обнуление и проверка
 			if(pobochlen>len) {
 				len = pobochlen;
-			}
-			if(pobochlen == matr[0].length) {
-				break;
 			}
 			pobochlen=0;
 		}
@@ -50,9 +47,6 @@ public class dz_11 {
 					}
 					pobochlen=0;
 				}
-			}
-			if(pobochlen == matr.length) {
-				break;
 			}
 			if(pobochlen>len) {
 				len = pobochlen;
