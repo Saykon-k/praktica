@@ -27,8 +27,8 @@ public class dz2_gold extends JComponent {
         Graphics2D g2 = (Graphics2D) g;
         g2.scale(7, 7);
         //входные данные вычисл€ютс€ здесь и записываютс€ промежутки
-        ArrayList<double []> num =gold_find(a_real,b_real,0.0001,1000,-1);//максимум функции
-        ArrayList<double []> num1 =gold_find(a_real,b_real,001,1000,1);//минимум
+        ArrayList<double []> num =gold_find(a_real,b_real,0.01,1000,-1);//максимум функции
+        ArrayList<double []> num1 =gold_find(a_real,b_real,0.01,1000,1);//минимум
         //настройка шрифта
         Stroke stroke = new BasicStroke(0.25f);
         g2.setStroke(stroke);
@@ -97,8 +97,12 @@ public class dz2_gold extends JComponent {
    	 int k1 = 0;
    	 while (Math.abs(b - a) > eps || k1<k){
    		 	k1++;
+ 
+
             x1 = b - (b - a) / gold;
             x2 = a + (b - a) / gold;
+  		 	System.out.println(x1);
+   		 	System.out.println(x2);
             y1 =(float) f(x1) ;
             y2 = (float) f(x2);
             if (y1 * i  >= y2 * i ) { a = x1; } else { b = x2; }
@@ -107,6 +111,7 @@ public class dz2_gold extends JComponent {
 	    }
 	    double x [] = {(a+b)/2};
 	    num.add(x);
+	    System.out.println(k);
 	    return num;
 
    }
