@@ -70,17 +70,17 @@ public class dz2_gold extends JComponent {
        
        //отображение 
        String s = "минимум функции y = " + Double.toString(f(num1.get(num1.size()-1)[0]));
-       Font myFont = new Font ("Courier New", 1, 2);
+       Font myFont = new Font ("Courier New", 1, 5);
        g.setFont (myFont);
-       g2.drawString(s, 0, 2);
+       g2.drawString(s, 0, 5);
        String s1 = "минимум функции x = " + Double.toString(num1.get(num1.size()-1)[0]);
-       g2.drawString(s1, 0, 5);
+       g2.drawString(s1, 0, 10);
 
        s = "Максимум функции y = " + Double.toString(f(num.get(num.size()-1)[0]));
        g.setFont (myFont);
-       g2.drawString(s, 0, 8);
+       g2.drawString(s, 0, 15);
        s1 = "Максимум функции x = " + Double.toString(num.get(num.size()-1)[0]);
-       g2.drawString(s1, 0, 11);
+       g2.drawString(s1, 0, 20);
 
        //g2.draw(new Line2D.Double(200,0,440,440));
 
@@ -95,14 +95,10 @@ public class dz2_gold extends JComponent {
    	 float x1,x2,y1,y2;
    	 float a = a1, b = b1;
    	 int k1 = 0;
-   	 while (Math.abs(b - a) > eps || k1<k){
+   	 while (Math.abs(b - a) > eps && k1<k){
    		 	k1++;
- 
-
             x1 = b - (b - a) / gold;
             x2 = a + (b - a) / gold;
-  		 	System.out.println(x1);
-   		 	System.out.println(x2);
             y1 =(float) f(x1) ;
             y2 = (float) f(x2);
             if (y1 * i  >= y2 * i ) { a = x1; } else { b = x2; }
@@ -111,7 +107,7 @@ public class dz2_gold extends JComponent {
 	    }
 	    double x [] = {(a+b)/2};
 	    num.add(x);
-	    System.out.println(k);
+	    System.out.println(k1);
 	    return num;
 
    }

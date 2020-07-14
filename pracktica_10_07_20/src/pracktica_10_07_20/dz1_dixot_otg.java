@@ -66,17 +66,17 @@ public class dz1_dixot_otg extends JComponent {
        
        //отображение 
        String s = "минимум функции y = " + Double.toString(f(num1.get(num1.size()-1)[0]));
-       Font myFont = new Font ("Courier New", 1, 2);
+       Font myFont = new Font ("Courier New", 1, 5);
        g.setFont (myFont);
-       g2.drawString(s, 0, 2);
+       g2.drawString(s, 0, 5);
        String s1 = "минимум функции x = " + Double.toString(num1.get(num1.size()-1)[0]);
-       g2.drawString(s1, 0, 5);
+       g2.drawString(s1, 0, 10);
 
        s = "Максимум функции y = " + Double.toString(f(num.get(num.size()-1)[0]));
        g.setFont (myFont);
-       g2.drawString(s, 0, 8);
+       g2.drawString(s, 0, 15);
        s1 = "Максимум функции x = " + Double.toString(num.get(num.size()-1)[0]);
-       g2.drawString(s1, 0, 11);
+       g2.drawString(s1, 0, 20);
 
        //g2.draw(new Line2D.Double(200,0,440,440));
 

@@ -25,8 +25,8 @@ public class dz3_fib extends JComponent{
         Graphics2D g2 = (Graphics2D) g;
         g2.scale(7, 7);
         //вычисление входных данных
-        ArrayList<double []> num =fib_find(a_real,b_real,10,-1);//максимум функции
-        ArrayList<double []> num1 =fib_find(a_real,b_real,10,1);//минимум
+        ArrayList<double []> num =fib_find(a_real,b_real,20,-1);//максимум функции
+        ArrayList<double []> num1 =fib_find(a_real,b_real,20,1);//минимум
         //настройка шрифта
         Stroke stroke = new BasicStroke(0.25f);
         g2.setStroke(stroke);
@@ -67,17 +67,17 @@ public class dz3_fib extends JComponent{
        
        //отображение 
        String s = "минимум функции y = " + Double.toString(f(num1.get(num1.size()-1)[0]));
-       Font myFont = new Font ("Courier New", 1, 2);
+       Font myFont = new Font ("Courier New", 1, 5);
        g.setFont (myFont);
-       g2.drawString(s, 0, 2);
+       g2.drawString(s, 0, 5);
        String s1 = "минимум функции x = " + Double.toString(num1.get(num1.size()-1)[0]);
-       g2.drawString(s1, 0, 5);
+       g2.drawString(s1, 0, 10);
 
        s = "Максимум функции y = " + Double.toString(f(num.get(num.size()-1)[0]));
        g.setFont (myFont);
-       g2.drawString(s, 0, 8);
+       g2.drawString(s, 0, 15);
        s1 = "Максимум функции x = " + Double.toString(num.get(num.size()-1)[0]);
-       g2.drawString(s1, 0, 11);
+       g2.drawString(s1, 0, 20);
 
        //g2.draw(new Line2D.Double(200,0,440,440));
 
@@ -93,7 +93,7 @@ public class dz3_fib extends JComponent{
 		return b;
 	}
 	static double f(double x){
-	    return  Math.sin(x)+x;
+	    return  Math.sin(x)+x*x*x-Math.exp(x);
 	}
 	public static ArrayList<double []> fib_find(float a1, float b1,int n,int i){
 	   	 ArrayList<double []> num = new ArrayList<double []>();
@@ -104,6 +104,7 @@ public class dz3_fib extends JComponent{
 	   		 x2 = a+(b-a)*Fib_n(n-1)/Fib_n(n);
 	   		 y1 = f(x1);
 	   		 y2 = f(x2);
+	   		 
 	   		 if(y1*i>y2*i) {
 	   			 a = x1;
 	   			 x1 = x2;
