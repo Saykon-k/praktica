@@ -1,3 +1,4 @@
+import java.security.KeyStore.Entry;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -6,19 +7,29 @@ import java.util.Random;
 public class dz1_rasp {
 
 	public static void main(String[] args) {
-	    Map<String , ArrayList> some = states(3,3);
+		HashMap<String , ArrayList<String>> some =states(4,4);
+	    ArrayList<String> r = new ArrayList<String>();
+	    Map<String,String> match = new  HashMap<String,String>(); 
+	    match.put("m1","w2");
+	    match.put("m2","w3");
+	    match.put("m3","w1");
+	    match.put("m4","w4");
+
 	    for (Map.Entry entry : some.entrySet()) {
 	        System.out.println("Key: " + entry.getKey() + " Value: "
 	            + entry.getValue());
 	    }
-	    Map<String,String> match = new  HashMap<String,String>(); 
-	    match.put("m1", "w2");
-	    match.put("m2", "w1");
-	    check(some,match);
+	    for (Map.Entry entry : match.entrySet()) {
+	        System.out.println("Key: " + entry.getKey() + " Value: "
+	            + entry.getValue());
+	    }
+	    blockpar(some,match);
+	    goodstate(some,match);
+	   
 	}
 	//генерация изначальных данных 
-	public static Map<String, ArrayList> states(int man,int woman){
-		Map<String, ArrayList> states = new HashMap<String, ArrayList>();
+	public static HashMap<String,ArrayList<String>> states(int man,int woman){
+		HashMap<String, ArrayList<String>> states = new HashMap<String, ArrayList<String>>();
 		
 		for(int i = 0 ; i<man;i++) { states.put("m"+Integer.toString(i+1),retList(woman,"w"));}
 		
@@ -42,17 +53,43 @@ public class dz1_rasp {
 	    return returned;
 	}
 	
-	public static ArrayList<String> check( Map<String , ArrayList> allcand , Map<String,String> match){
-		 ArrayList<String> block = new ArrayList<String>();
-		 for(String man : match.keySet()) {
-			// System.out.println(allcand.get(man).indexOf(match.get(man)));
-			 for(String woman : match.values()) {
-			  if(allcand.get(man).indexOf(woman)>allcand.get(man).indexOf(man) && allcand.get(woman).indexOf(man)>allcand.get(woman).indexOf(match.) ){
-				  System.out.println(allcand.get(man).indexOf(woman)+" "+allcand.get(man).indexOf(match.get(man)));
-			  }
-			 }
-		 }
-		 
-		 return block;
+	public static ArrayList<String[]> blockpar(HashMap<String , ArrayList<String>> allpriority,  Map<String,String> match ){
+		ArrayList<String[]> block = new ArrayList<String[] >();
+		for(String m : match.keySet()) {
+			//достаем местоположение в данном распределении и сравниваем с другими 
+			int state =  allpriority.get(m).indexOf(match.get(m));
+
+			ArrayList<String> members = allpriority.get(m);//чтобы постоянно не обращаться
+			//очень плохая строчка,так как здесь генерируется список ,Но это вынужденная работа,так как невозможно достать ТОТ ключ из множества 
+			for(Map.Entry w : match.entrySet()) {
+				
+				if(members.indexOf(w.getValue()) < state  && members.indexOf(w.getValue())>-1) {
+					
+					if(allpriority.get(w.getValue()).indexOf(m)<allpriority.get(w.getValue()).indexOf(w.getKey()) && allpriority.get(w.getValue()).indexOf(m)>-1 && allpriority.get(w.getValue()).indexOf(w.getKey())>-1) {
+						System.out.println(m+" "+ w.getValue()+" "+allpriority.get(m).get(state) );
+						String s[]= { m, (String) w.getValue() ,allpriority.get(m).get(state) };
+						block.add(s);
+					}
+					
+				}
+			}
+	}
+		return block;
+}
+	public static Map<String,String>  goodstate(HashMap<String , ArrayList<String>> allpriority,  Map<String,String> match ){
+					Map<String,String> goodst =new HashMap<String , String>();
+					ArrayList<String[]> check = new ArrayList<String[]>();
+					while(!check.isEmpty()) {
+						check = blockpar(allpriority,match);
+						if(!check.isEmpty()) {
+							String rep []= check.get(0);
+							match.replace(rep[0], rep[2], rep[1]);
+							//match.re
+						}
+					}
+					goodst = match;
+				return goodst;
+
+		
 	}
 }
