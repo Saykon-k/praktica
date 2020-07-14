@@ -62,10 +62,11 @@ public class dz1_rasp {
 			ArrayList<String> members = allpriority.get(m);//чтобы посто€нно не обращатьс€
 			//очень плоха€ строчка,так как здесь генерируетс€ список ,Ќо это вынужденна€ работа,так как невозможно достать “ќ“ ключ из множества 
 			for(Map.Entry w : match.entrySet()) {
-				
+				//так как значение может быть -1, то об€зтельна€ проверка на наличие элемента в списке
 				if(members.indexOf(w.getValue()) < state  && members.indexOf(w.getValue())>-1) {
-					
+					//здесь говоритс€ достанем значение из списка два( не ключ) сформируем его список предпочтений и найдем в нем кандидата остальные две проверки написаны по соображени€м выше 
 					if(allpriority.get(w.getValue()).indexOf(m)<allpriority.get(w.getValue()).indexOf(w.getKey()) && allpriority.get(w.getValue()).indexOf(m)>-1 && allpriority.get(w.getValue()).indexOf(w.getKey())>-1) {
+						//здесь пара  1 2 более предпочтительна€,чем 1-3  
 						System.out.println(m+" "+ w.getValue()+" "+allpriority.get(m).get(state) );
 						String s[]= { m, (String) w.getValue() ,allpriority.get(m).get(state) };
 						block.add(s);
