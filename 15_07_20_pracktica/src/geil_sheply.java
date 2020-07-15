@@ -13,85 +13,86 @@ public class geil_sheply {
 		HashMap<String , ArrayList<String>> some =states( m,w);
 	    ArrayList<String> r = new ArrayList<String>();
 	    //большой тест
-//	    Map<String,String> match = new  HashMap<String,String>(); 
-//	    some.clear();
-//	    String s [] = {"w3", "w1", "w5", "w7", "w4", "w2", "w8", "w6"};
-//	    for(String s1 : s) r.add(s1);
-//	    some.put("m1", (ArrayList<String>) r.clone());
-//	    r.clear();
-//	    String q [] = {"w6", "w1", "w3", "w4", "w8", "w7", "w5", "w2"};
-//	    for(String s1 : q) r.add(s1);
-//	    some.put("m2", (ArrayList<String>) r.clone());
-//	    r.clear();
-//	    String q1 [] = {"w7", "w4", "w3", "w6", "w5", "w1", "w2", "w8"};
-//	    for(String s1 : q1) r.add(s1);
-//	    some.put("m3", (ArrayList<String>) r.clone());
-//	    r.clear();
-//	    String q2 [] = {"w5", "w3", "w8", "w2", "w6", "w1", "w4", "w7"};
-//	    for(String s1 : q2) r.add(s1);
-//	    some.put("m4", (ArrayList<String>) r.clone());
-//	    r.clear();
-//	    String q3 [] = {"w4", "w1", "w2", "w8", "w7", "w3", "w6", "w5"};
-//	    for(String s1 : q3) r.add(s1);
-//	    some.put("m5", (ArrayList<String>) r.clone());
-//	    r.clear();
-//	    String q4 [] = {"w6", "w2", "w5", "w7", "w8", "w4", "w3", "w1"};
-//	    for(String s1 : q4) r.add(s1);
-//	    some.put("m6", (ArrayList<String>) r.clone());
-//	    r.clear();
-//	    String q5 [] = {"w7", "w8", "w1", "w6", "w2", "w3", "w4", "w5"};
-//	    for(String s1 : q5) r.add(s1);
-//	    some.put("m7", (ArrayList<String>) r.clone());
-//	    r.clear();	    
-//	    String q6 [] = {"w2", "w6", "w7", "w1", "w8", "w3", "w4", "w5"};
-//	    for(String s1 : q6) r.add(s1);
-//	    some.put("m8", (ArrayList<String>) r.clone());
-//	    r.clear();
-//	    
-//	    String q7 [] = {"m4", "m3", "m8", "m1", "m2", "m5", "m7", "m6"};
-//	    for(String s1 : q7) r.add(s1);
-//	    some.put("w1", (ArrayList<String>) r.clone());
-//	    r.clear();
-//	    String q8 [] = {"m3", "m7", "m5", "m8", "m6", "m4", "m1", "m2"};
-//	    for(String s1 : q8) r.add(s1);
-//	    some.put("w2", (ArrayList<String>) r.clone());
-//	    r.clear();
-//	    String q9 [] = {"m7", "m5", "m8", "m3", "m6", "m2", "m1", "m4"};
-//	    for(String s1 : q9) r.add(s1);
-//	    some.put("w3", (ArrayList<String>) r.clone());
-//	    r.clear();
-//	    String q10 [] = {"m6", "m4", "m2", "m7", "m3", "m1", "m5", "m8"};
-//	    for(String s1 : q10) r.add(s1);
-//	    some.put("w4", (ArrayList<String>) r.clone());
-//	    r.clear();
-//	    String q11 [] = {"m8", "m7", "m1", "m5", "m6", "m4", "m3", "m2"};
-//	    for(String s1 : q11) r.add(s1);
-//	    some.put("w5", (ArrayList<String>) r.clone());
-//	    r.clear();
-//	    String q12 [] = {"m5", "m4", "m7", "m6", "m2", "m8", "m3", "m1"};
-//	    for(String s1 : q12) r.add(s1);
-//	    some.put("w6", (ArrayList<String>) r.clone());
-//	    r.clear();
-//	    String q13 [] = {"m1", "m4", "m5", "m6", "m2", "m8", "m3", "m7"};
-//	    for(String s1 : q13) r.add(s1);
-//	    some.put("w7", (ArrayList<String>) r.clone());
-//	    r.clear();
-//	    String q14 [] = {"m2", "m5", "m4", "m3", "m7", "m8", "m1", "m6"};
-//	    for(String s1 : q14) r.add(s1);
-//	    some.put("w8", (ArrayList<String>) r.clone());
-//	    r.clear();
+	    Map<String,String> match = new  HashMap<String,String>(); 
+	    some.clear();
+	    String s [] = {"w3", "w1", "w5", "w7", "w4", "w2", "w8", "w6"};
+	    for(String s1 : s) r.add(s1);
+	    some.put("m1", (ArrayList<String>) r.clone());
+	    r.clear();
+	    String q [] = {"w6", "w1", "w3", "w4", "w8", "w7", "w5", "w2"};
+	    for(String s1 : q) r.add(s1);
+	    some.put("m2", (ArrayList<String>) r.clone());
+	    r.clear();
+	    String q1 [] = {"w7", "w4", "w3", "w6", "w5", "w1", "w2", "w8"};
+	    for(String s1 : q1) r.add(s1);
+	    some.put("m3", (ArrayList<String>) r.clone());
+	    r.clear();
+	    String q2 [] = {"w5", "w3", "w8", "w2", "w6", "w1", "w4", "w7"};
+	    for(String s1 : q2) r.add(s1);
+	    some.put("m4", (ArrayList<String>) r.clone());
+	    r.clear();
+	    String q3 [] = {"w4", "w1", "w2", "w8", "w7", "w3", "w6", "w5"};
+	    for(String s1 : q3) r.add(s1);
+	    some.put("m5", (ArrayList<String>) r.clone());
+	    r.clear();
+	    String q4 [] = {"w6", "w2", "w5", "w7", "w8", "w4", "w3", "w1"};
+	    for(String s1 : q4) r.add(s1);
+	    some.put("m6", (ArrayList<String>) r.clone());
+	    r.clear();
+	    String q5 [] = {"w7", "w8", "w1", "w6", "w2", "w3", "w4", "w5"};
+	    for(String s1 : q5) r.add(s1);
+	    some.put("m7", (ArrayList<String>) r.clone());
+	    r.clear();	    
+	    String q6 [] = {"w2", "w6", "w7", "w1", "w8", "w3", "w4", "w5"};
+	    for(String s1 : q6) r.add(s1);
+	    some.put("m8", (ArrayList<String>) r.clone());
+	    r.clear();
+	    
+	    String q7 [] = {"m4", "m3", "m8", "m1", "m2", "m5", "m7", "m6"};
+	    for(String s1 : q7) r.add(s1);
+	    some.put("w1", (ArrayList<String>) r.clone());
+	    r.clear();
+	    String q8 [] = {"m3", "m7", "m5", "m8", "m6", "m4", "m1", "m2"};
+	    for(String s1 : q8) r.add(s1);
+	    some.put("w2", (ArrayList<String>) r.clone());
+	    r.clear();
+	    String q9 [] = {"m7", "m5", "m8", "m3", "m6", "m2", "m1", "m4"};
+	    for(String s1 : q9) r.add(s1);
+	    some.put("w3", (ArrayList<String>) r.clone());
+	    r.clear();
+	    String q10 [] = {"m6", "m4", "m2", "m7", "m3", "m1", "m5", "m8"};
+	    for(String s1 : q10) r.add(s1);
+	    some.put("w4", (ArrayList<String>) r.clone());
+	    r.clear();
+	    String q11 [] = {"m8", "m7", "m1", "m5", "m6", "m4", "m3", "m2"};
+	    for(String s1 : q11) r.add(s1);
+	    some.put("w5", (ArrayList<String>) r.clone());
+	    r.clear();
+	    String q12 [] = {"m5", "m4", "m7", "m6", "m2", "m8", "m3", "m1"};
+	    for(String s1 : q12) r.add(s1);
+	    some.put("w6", (ArrayList<String>) r.clone());
+	    r.clear();
+	    String q13 [] = {"m1", "m4", "m5", "m6", "m2", "m8", "m3", "m7"};
+	    for(String s1 : q13) r.add(s1);
+	    some.put("w7", (ArrayList<String>) r.clone());
+	    r.clear();
+	    String q14 [] = {"m2", "m5", "m4", "m3", "m7", "m8", "m1", "m6"};
+	    for(String s1 : q14) r.add(s1);
+	    some.put("w8", (ArrayList<String>) r.clone());
+	    r.clear();
 //	    match.put("m1", "w1");
 //	    match.put("m2", "w2");
 //	    match.put("m3", "w3");
 //	    match.put("m4", "w4");
 
 //
+	    System.out.println("Изначальное состояние");
 	    for (Map.Entry entry : some.entrySet()) {
 	        System.out.println("Key: " + entry.getKey() + " Value: "
 	            + entry.getValue());
 	    }
-	    System.out.println(some.size());
-	    shep_meth(some,m,w,1);
+	    
+	    shep_meth(some,8,8,1);
 	}
 		
 	// сложная функция основная
@@ -104,8 +105,9 @@ public class geil_sheply {
 		//самый первый шаг.. 
 		int kM = 1;
 		//проверяем размер states если размер идентичен количеству индивидов w, то нет конкруренции между теми. кто предлагает
-		System.out.println("нулевой шаг "+ states.toString());
 		int col_w  = 0;
+		int sh = 0;
+		System.out.println();
 		while(col_w != sizew) {
 			kM =1;
 			for(String s : allpriority.keySet()) {
@@ -114,7 +116,6 @@ public class geil_sheply {
 					break;
 				}
 				kM++;
-				
 				String firstpalce = allpriority.get(s).get(0);
 				ArrayList<String> checkplace = allpriority.get(firstpalce);
 				int findplace = checkplace.indexOf(s);
@@ -128,16 +129,26 @@ public class geil_sheply {
 				}
 			}
 			}
+			System.out.println("проверяются повторы");
 			for (Map.Entry entry : states.entrySet()) 
-		        System.out.println("Key: " + entry.getKey() + " Value: "
-		            + entry.getValue());
-				System.out.println();
+		        System.out.println("Key: " + entry.getKey() + " Value: "+ entry.getValue());
+			System.out.println();
 			prioriti(states, allpriority,nexttry,sizem);
+			
+			System.out.println("текущее значение после проверки на повторы");
+			for (Map.Entry entry : allpriority.entrySet()) 
+			     System.out.println("Key: " + entry.getKey() + " Value: "+ entry.getValue());
+			System.out.println();
 			col_w = states.size();
 			states.clear();
 
 		}
-		states.clear();		
+		System.out.println("финальные значения");
+		for (Map.Entry entry : allpriority.entrySet()) 
+		     System.out.println("Key: " + entry.getKey() + " Value: "+ entry.getValue());
+		System.out.println();
+		System.out.println("последний повтор является ответом");
+	
 		return raspr;
 	}
 	//public static findmaxretnexttry()
