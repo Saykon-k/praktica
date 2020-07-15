@@ -152,7 +152,8 @@ public class geil_sheply {
 		return raspr;
 	}
 	//public static findmaxretnexttry()
-	public static void prioriti(	HashMap<String, ArrayList<String>> states,HashMap<String , ArrayList<String>> allpriority,ArrayList <String> nexttry,int msize ){
+	public static void prioriti(
+			HashMap<String, ArrayList<String>> states,HashMap<String , ArrayList<String>> allpriority,ArrayList <String> nexttry,int msize ){
 		int max = 1000000;  
 		String prommax = "";
 		ArrayList<String> remel = new ArrayList<String>();
@@ -274,8 +275,13 @@ public class geil_sheply {
 			for(Map.Entry w : match.entrySet()) {
 				//так как значение может быть -1, то обязтельная проверка на наличие элемента в списке
 				if(members.indexOf(w.getValue()) < state  && members.indexOf(w.getValue())>-1) {
-					//здесь говорится достанем значение из списка два( не ключ) сформируем его список предпочтений и найдем в нем кандидата остальные две проверки написаны по соображениям выше 
-					if(allpriority.get(w.getValue()).indexOf(m)<allpriority.get(w.getValue()).indexOf(w.getKey()) && allpriority.get(w.getValue()).indexOf(m)>-1 && allpriority.get(w.getValue()).indexOf(w.getKey())>-1) {
+					//здесь говорится 
+					//достанем значение из списка два( не ключ) 
+					//сформируем его список предпочтений и найдем в нем кандидата остальные две проверки написаны по соображениям выше 
+					if(allpriority.get(
+							w.getValue()).indexOf(m)<allpriority.get(w.getValue()).indexOf(w.getKey()) 
+							&& allpriority.get(w.getValue()).indexOf(m)>-1 
+							&& allpriority.get(w.getValue()).indexOf(w.getKey())>-1) {
 						//здесь пара  1 2 более предпочтительная,чем 1-3  
 						//System.out.println(m+" "+ w.getValue()+" "+allpriority.get(m).get(state) );
 						String s[]= { m, (String) w.getValue()};
