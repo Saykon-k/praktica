@@ -13,73 +13,73 @@ public class geil_sheply {
 		HashMap<String , ArrayList<String>> some =states( m,w);
 	    ArrayList<String> r = new ArrayList<String>();
 	    //большой тест
-	    Map<String,String> match = new  HashMap<String,String>(); 
-	    some.clear();
-	    String s [] = {"w3", "w1", "w5", "w7", "w4", "w2", "w8", "w6"};
-	    for(String s1 : s) r.add(s1);
-	    some.put("m1", (ArrayList<String>) r.clone());
-	    r.clear();
-	    String q [] = {"w6", "w1", "w3", "w4", "w8", "w7", "w5", "w2"};
-	    for(String s1 : q) r.add(s1);
-	    some.put("m2", (ArrayList<String>) r.clone());
-	    r.clear();
-	    String q1 [] = {"w7", "w4", "w3", "w6", "w5", "w1", "w2", "w8"};
-	    for(String s1 : q1) r.add(s1);
-	    some.put("m3", (ArrayList<String>) r.clone());
-	    r.clear();
-	    String q2 [] = {"w5", "w3", "w8", "w2", "w6", "w1", "w4", "w7"};
-	    for(String s1 : q2) r.add(s1);
-	    some.put("m4", (ArrayList<String>) r.clone());
-	    r.clear();
-	    String q3 [] = {"w4", "w1", "w2", "w8", "w7", "w3", "w6", "w5"};
-	    for(String s1 : q3) r.add(s1);
-	    some.put("m5", (ArrayList<String>) r.clone());
-	    r.clear();
-	    String q4 [] = {"w6", "w2", "w5", "w7", "w8", "w4", "w3", "w1"};
-	    for(String s1 : q4) r.add(s1);
-	    some.put("m6", (ArrayList<String>) r.clone());
-	    r.clear();
-	    String q5 [] = {"w7", "w8", "w1", "w6", "w2", "w3", "w4", "w5"};
-	    for(String s1 : q5) r.add(s1);
-	    some.put("m7", (ArrayList<String>) r.clone());
-	    r.clear();	    
-	    String q6 [] = {"w2", "w6", "w7", "w1", "w8", "w3", "w4", "w5"};
-	    for(String s1 : q6) r.add(s1);
-	    some.put("m8", (ArrayList<String>) r.clone());
-	    r.clear();
-	    
-	    String q7 [] = {"m4", "m3", "m8", "m1", "m2", "m5", "m7", "m6"};
-	    for(String s1 : q7) r.add(s1);
-	    some.put("w1", (ArrayList<String>) r.clone());
-	    r.clear();
-	    String q8 [] = {"m3", "m7", "m5", "m8", "m6", "m4", "m1", "m2"};
-	    for(String s1 : q8) r.add(s1);
-	    some.put("w2", (ArrayList<String>) r.clone());
-	    r.clear();
-	    String q9 [] = {"m7", "m5", "m8", "m3", "m6", "m2", "m1", "m4"};
-	    for(String s1 : q9) r.add(s1);
-	    some.put("w3", (ArrayList<String>) r.clone());
-	    r.clear();
-	    String q10 [] = {"m6", "m4", "m2", "m7", "m3", "m1", "m5", "m8"};
-	    for(String s1 : q10) r.add(s1);
-	    some.put("w4", (ArrayList<String>) r.clone());
-	    r.clear();
-	    String q11 [] = {"m8", "m7", "m1", "m5", "m6", "m4", "m3", "m2"};
-	    for(String s1 : q11) r.add(s1);
-	    some.put("w5", (ArrayList<String>) r.clone());
-	    r.clear();
-	    String q12 [] = {"m5", "m4", "m7", "m6", "m2", "m8", "m3", "m1"};
-	    for(String s1 : q12) r.add(s1);
-	    some.put("w6", (ArrayList<String>) r.clone());
-	    r.clear();
-	    String q13 [] = {"m1", "m4", "m5", "m6", "m2", "m8", "m3", "m7"};
-	    for(String s1 : q13) r.add(s1);
-	    some.put("w7", (ArrayList<String>) r.clone());
-	    r.clear();
-	    String q14 [] = {"m2", "m5", "m4", "m3", "m7", "m8", "m1", "m6"};
-	    for(String s1 : q14) r.add(s1);
-	    some.put("w8", (ArrayList<String>) r.clone());
-	    r.clear();
+//	    Map<String,String> match = new  HashMap<String,String>(); 
+//	    some.clear();
+//	    String s [] = {"w3", "w1", "w5", "w7", "w4", "w2", "w8", "w6"};
+//	    for(String s1 : s) r.add(s1);
+//	    some.put("m1", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    String q [] = {"w6", "w1", "w3", "w4", "w8", "w7", "w5", "w2"};
+//	    for(String s1 : q) r.add(s1);
+//	    some.put("m2", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    String q1 [] = {"w7", "w4", "w3", "w6", "w5", "w1", "w2", "w8"};
+//	    for(String s1 : q1) r.add(s1);
+//	    some.put("m3", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    String q2 [] = {"w5", "w3", "w8", "w2", "w6", "w1", "w4", "w7"};
+//	    for(String s1 : q2) r.add(s1);
+//	    some.put("m4", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    String q3 [] = {"w4", "w1", "w2", "w8", "w7", "w3", "w6", "w5"};
+//	    for(String s1 : q3) r.add(s1);
+//	    some.put("m5", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    String q4 [] = {"w6", "w2", "w5", "w7", "w8", "w4", "w3", "w1"};
+//	    for(String s1 : q4) r.add(s1);
+//	    some.put("m6", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    String q5 [] = {"w7", "w8", "w1", "w6", "w2", "w3", "w4", "w5"};
+//	    for(String s1 : q5) r.add(s1);
+//	    some.put("m7", (ArrayList<String>) r.clone());
+//	    r.clear();	    
+//	    String q6 [] = {"w2", "w6", "w7", "w1", "w8", "w3", "w4", "w5"};
+//	    for(String s1 : q6) r.add(s1);
+//	    some.put("m8", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    
+//	    String q7 [] = {"m4", "m3", "m8", "m1", "m2", "m5", "m7", "m6"};
+//	    for(String s1 : q7) r.add(s1);
+//	    some.put("w1", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    String q8 [] = {"m3", "m7", "m5", "m8", "m6", "m4", "m1", "m2"};
+//	    for(String s1 : q8) r.add(s1);
+//	    some.put("w2", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    String q9 [] = {"m7", "m5", "m8", "m3", "m6", "m2", "m1", "m4"};
+//	    for(String s1 : q9) r.add(s1);
+//	    some.put("w3", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    String q10 [] = {"m6", "m4", "m2", "m7", "m3", "m1", "m5", "m8"};
+//	    for(String s1 : q10) r.add(s1);
+//	    some.put("w4", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    String q11 [] = {"m8", "m7", "m1", "m5", "m6", "m4", "m3", "m2"};
+//	    for(String s1 : q11) r.add(s1);
+//	    some.put("w5", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    String q12 [] = {"m5", "m4", "m7", "m6", "m2", "m8", "m3", "m1"};
+//	    for(String s1 : q12) r.add(s1);
+//	    some.put("w6", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    String q13 [] = {"m1", "m4", "m5", "m6", "m2", "m8", "m3", "m7"};
+//	    for(String s1 : q13) r.add(s1);
+//	    some.put("w7", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    String q14 [] = {"m2", "m5", "m4", "m3", "m7", "m8", "m1", "m6"};
+//	    for(String s1 : q14) r.add(s1);
+//	    some.put("w8", (ArrayList<String>) r.clone());
+//	    r.clear();
 //	    match.put("m1", "w1");
 //	    match.put("m2", "w2");
 //	    match.put("m3", "w3");
@@ -91,8 +91,8 @@ public class geil_sheply {
 	        System.out.println("Key: " + entry.getKey() + " Value: "
 	            + entry.getValue());
 	    }
-	    
-	    shep_meth(some,8,8,1);
+	    //размеры задаютс€ вторым и третим аргументом - длина списка m и длина списка w
+	    shep_meth(some,4,4,1);
 	}
 		
 	// сложна€ функци€ основна€
@@ -189,7 +189,7 @@ public class geil_sheply {
 	    removem(states,allpriority,msize);
 
 
-		//удал€еютс€ последующие элементы из списка предпочтений у wi 
+		//удал€ютс€ последующие элементы из списка предпочтений у wi 
 		ArrayList<String> del = new ArrayList<String>();
 		for(String s : states.keySet()) {
 			for(String s1 : allpriority.get(s)) {
@@ -212,6 +212,7 @@ public class geil_sheply {
 
 
 	}
+	//удал€ем конкретные значени€, которые не подошли
 	public static void removem (HashMap<String, ArrayList<String>> states,HashMap<String , ArrayList<String>> allpriority,int sizem) {
 		boolean check = false;
 		ArrayList<String> del = new ArrayList<String>();
