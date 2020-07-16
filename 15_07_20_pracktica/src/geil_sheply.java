@@ -8,10 +8,10 @@ import org.omg.PortableServer.POAManagerPackage.State;
 
 public class geil_sheply {
 	public static void main(String args[]) {
-		int m = 4;
-		int w = 4;
+		int m = 9;
+		int w = 9;
 		HashMap<String , ArrayList<String>> some =states( m,w);
-	    ArrayList<String> r = new ArrayList<String>();
+		HashMap<String , ArrayList<String>> some1 = (HashMap<String, ArrayList<String>>) some.clone();
 	    //большой тест
 //	    Map<String,String> match = new  HashMap<String,String>(); 
 //	    some.clear();
@@ -86,13 +86,23 @@ public class geil_sheply {
 //	    match.put("m4", "w4");
 
 //
+	    for (ArrayList<String> entry : some1.values()) {
+	    	System.out.print("{");
+	        for(String s : entry) {
+	        	System.out.print("\""+s +"\", ");
+	        }
+	        System.out.print("},");
+	        System.out.println();
+	        
+	    }
 	    System.out.println("Изначальное состояние");
 	    for (Map.Entry entry : some.entrySet()) {
 	        System.out.println("Key: " + entry.getKey() + " Value: "
 	            + entry.getValue());
 	    }
 	    //размеры задаются вторым и третим аргументом - длина списка m и длина списка w
-	    shep_meth(some,4,4,1);
+	    shep_meth(some,m,w,1);
+
 	}
 		
 	// сложная функция основная
