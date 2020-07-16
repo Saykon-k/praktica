@@ -7,72 +7,63 @@ import java.util.Random;
 public class dz1_rasp {
 
 	public static void main(String[] args) {
-		HashMap<String , ArrayList<String>> some =states(3,3);
+		HashMap<String , ArrayList<String>> some =states(5,5);
 	    ArrayList<String> r = new ArrayList<String>();
 	    Map<String,String> match = new  HashMap<String,String>(); 
-	    some.clear();
-	    r.add("w4");
-	    r.add("w3");
 	    r.add("w1");
 	    r.add("w2");
+	    r.add("w3");
+	    r.add("w4");
 	    some.put("m1", (ArrayList<String>) r.clone());
 	    r.clear();
 	    
-	    r.add("w4");
 	    r.add("w2");
-	    r.add("w3");
+	    r.add("w4");
 	    r.add("w1");
 	    some.put("m2", (ArrayList<String>) r.clone());
 	    r.clear();
 	  
-	    r.add("w4");
 	    r.add("w3");
 	    r.add("w1");
 	    r.add("w2");
 	    some.put("m3", (ArrayList<String>) r.clone());
 	    r.clear();
 	    
-	    r.add("w2");
 	    r.add("w4");
+	    r.add("w2");
 	    r.add("w3");
-	    r.add("w1");
 	    some.put("m4", (ArrayList<String>) r.clone());
 	    r.clear();
 	    
-	    r.add("m4");
 	    r.add("m2");
 	    r.add("m3");
 	    r.add("m1");
 	    some.put("w1", (ArrayList<String>) r.clone());
 	    r.clear();
 	    
-	    
-	    r.add("m4");
 	    r.add("m3");
 	    r.add("m1");
+	    r.add("m4");
 	    r.add("m2");
 	    some.put("w2", (ArrayList<String>) r.clone());
 	    r.clear();
 	    
-	    
-	    r.add("m2");
+	    r.add("m3");
 	    r.add("m1");
 	    r.add("m4");
-	    r.add("m3");
 	    some.put("w3", (ArrayList<String>) r.clone());
-	    r.clear();	    
+	    r.clear();
 	    
-	    r.add("m3");
-	    r.add("m2");
 	    r.add("m1");
+	    r.add("m2");
 	    r.add("m4");
 	    some.put("w4", (ArrayList<String>) r.clone());
 	    r.clear();
-	    
-	    match.put("m1", "w1");
-	    match.put("m2", "w2");
-	    match.put("m3", "w3");
-	    match.put("m4", "w4");
+	    match.put("m1", "w3");
+	    match.put("m2", "w4");
+	    match.put("m3", "w1");
+	    match.put("m4", "w2");
+	    match.put("m5", "w4");
 
 //
 	    for (Map.Entry entry : some.entrySet()) {
@@ -83,9 +74,11 @@ public class dz1_rasp {
 	        System.out.println("Key: " + entry.getKey() + " Value: "
 	            + entry.getValue());
 	    }
-	    //blockpar(some,match);
-	    System.out.println(goodstate(some,match).toString());
-	    //goodstate(some,match);
+	    blockpar(some,match);
+	    
+	    System.out.println("—табильное распределение " + 
+	    goodstate(some,match).toString());
+
 	}
 	//генераци€ изначальных данных 
 	public static HashMap<String,ArrayList<String>> states(int man,int woman){
@@ -120,12 +113,15 @@ public class dz1_rasp {
 			int state =  allpriority.get(m).indexOf(match.get(m));
 
 			ArrayList<String> members = allpriority.get(m);//чтобы посто€нно не обращатьс€
-			//очень плоха€ строчка,так как здесь генерируетс€ список ,Ќо это вынужденна€ работа,так как невозможно достать “ќ“ ключ из множества 
+			
 			for(Map.Entry w : match.entrySet()) {
 				//так как значение может быть -1, то об€зтельна€ проверка на наличие элемента в списке
 				if(members.indexOf(w.getValue()) < state  && members.indexOf(w.getValue())>-1) {
-					//здесь говоритс€ достанем значение из списка два( не ключ) сформируем его список предпочтений и найдем в нем кандидата остальные две проверки написаны по соображени€м выше 
-					if(allpriority.get(w.getValue()).indexOf(m)<allpriority.get(w.getValue()).indexOf(w.getKey()) && allpriority.get(w.getValue()).indexOf(m)>-1 && allpriority.get(w.getValue()).indexOf(w.getKey())>-1) {
+					//здесь говоритс€ достанем значение из списка два( не ключ) сформируем его список предпочтений
+					//и найдем в нем кандидата остальные две проверки написаны по соображени€м выше 
+					if(allpriority.get(w.getValue()).indexOf(m)<allpriority.get(w.getValue()).indexOf(w.getKey()) 
+							&& allpriority.get(w.getValue()).indexOf(m)>-1 
+							&& allpriority.get(w.getValue()).indexOf(w.getKey())>-1) {
 						//здесь пара  1 2 более предпочтительна€,чем 1-3  
 						//System.out.println(m+" "+ w.getValue()+" "+allpriority.get(m).get(state) );
 						String s[]= { m, (String) w.getValue()};
@@ -134,7 +130,13 @@ public class dz1_rasp {
 					
 				}
 			}
-	}
+	}	
+		if(!block.isEmpty()) {
+		System.out.println("блокирующие пары:");
+		}
+		for(String s[] : block) {
+			System.out.println(s[0] + " " + s[1] +" ");
+		}
 		return block;
 }
 	public static  Map<String,String> breakpar( Map<String,String> match,String pair[]){
