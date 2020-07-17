@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class dz_1_slovar_with_v {
 
 	public static void main(String[] args) throws IOException {
-		FileReader fr  = new FileReader("C:\\Users\\lenov\\Desktop\\words.txt");
+		FileReader fr  = new FileReader("C:\\Users\\lenov\\git\\praktica\\17_07_20_pracktica\\words.txt");
 	     Scanner scan = new Scanner(fr);
 	     ArrayList<String> dict = new ArrayList<String>();
 	     HashMap<String, Double  > dict1 = new HashMap<String,Double >();
@@ -26,7 +26,7 @@ public class dz_1_slovar_with_v {
 	        	 i1 += Double.parseDouble(s[1]);
 	         }
 	     fr.close();
-	     String s = "themendeadinsideohhhh";
+	     String s = "mencoldwhite";
 	     System.out.println("входное слово " + s);
 	     char [] slovobychar = s.toCharArray();
 	     bidirectional_algorithm(dict,slovobychar,dict1,i1);
@@ -88,6 +88,7 @@ public static void maximum_match(ArrayList<String> dict ,
 		}
 		
 //		System.out.println(wordspovtor.toString());
+		System.out.println("результаты максимального");
 		System.out.println(vvv.toString());
 		System.out.println(words.toString());
 		words.add(Double.toString(ver(vvv,all)));
@@ -147,6 +148,7 @@ public static void Reverse_algorithm(ArrayList<String> dict ,
 
 	}
 	//System.out.println(wordspovtor.toString());
+	System.out.println("Результаты обратного алгоритма");
 	System.out.println("частота "+ vvv.toString());
 	System.out.println(words.toString());
 	words.add(Double.toString(ver(vvv,all)));
@@ -190,7 +192,7 @@ public static void Reverse_algorithm(ArrayList<String> dict ,
 			System.out.println("Алгоритм максимального соответствия дал больше вероятность");
 			return words;
 		}else {
-			System.out.println("Обратный алгоритм максимального соответствия дал меньше неизвестных слов");
+			System.out.println("Обратный алгоритм максимального дал больше вероятность");
 			return words1;
 
 		}
