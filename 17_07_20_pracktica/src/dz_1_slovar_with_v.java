@@ -17,42 +17,33 @@ public class dz_1_slovar_with_v {
 	     HashMap<String, Double  > dict1 = new HashMap<String,Double >();
 	     double i1 = 0;
 	     int i = 1;
-	     int i3 = 0;
 	     //записываем в словарь слова
 	     while (scan.hasNextLine()) {
 	         i++;
 	         String s[] = scan.nextLine().split(" ");
 	        	 dict.add(s[0]);
-		        
 	        	 dict1.put(s[0],Double.parseDouble(s[1]));
 	        	 i1 += Double.parseDouble(s[1]);
-	        	 i3++;
-//	        if (i == 5000) {
-//	        	break;
-//	        }
-	   
 	         }
-
-	     System.out.println(i3);
 	     fr.close();
-	     String s = "themenan";
+	     String s = "themendeadinsideohhhh";
 	     System.out.println("входное слово " + s);
 	     char [] slovobychar = s.toCharArray();
-	 	ArrayList<String> words = new ArrayList<String>();
-	     maximum_match(dict,slovobychar,words,0,dict1,i1);
-	     System.out.println(dict1.get("a"));
+	     bidirectional_algorithm(dict,slovobychar,dict1,i1);
+	     
 	    }
-public static void maximum_match(ArrayList<String> dict , char[] slovobychar,ArrayList<String> words,int k,   HashMap<String,Double>  dict1,Double all ) {
+public static void maximum_match(ArrayList<String> dict , 
+		char[] slovobychar,ArrayList<String> words,double k,   HashMap<String,Double>  dict1,Double all ) {
 		String s = "";
 		//словарь слов, которые нашлись в процессе и индекс 
 		HashMap<String,Double> wordspovtor = new HashMap<String,Double>();
 		ArrayList<Double> vvv = new ArrayList<Double>();
-
 		String []sravn_var = new String[3];
 		double i = 0; 
 		double remeber = 0;
 		String max ="";
 		int remeber1 = 0;
+		
 		while(remeber < slovobychar.length ) {
 			
 			while(i < slovobychar.length) {
@@ -61,9 +52,8 @@ public static void maximum_match(ArrayList<String> dict , char[] slovobychar,Arr
 					max = s;
 					remeber = i;
 					remeber1=4;
-					//сохраняем элементы, которые есть в строке и их индекс 
-					//System.out.println(s+" "+dict1.get(s));
-					
+
+					//добавляются слова, которые есть в словае и их индексы 
 					wordspovtor.put(s, (double) i);
 				}
 				i++;
@@ -74,6 +64,7 @@ public static void maximum_match(ArrayList<String> dict , char[] slovobychar,Arr
 					break;
 				}
 				k++;
+				//добавляем букву в словарь с частотой 1 
 				vvv.add((double) 1);
 				words.add(String.valueOf(slovobychar[(int) remeber]));
 				remeber++;
@@ -81,6 +72,8 @@ public static void maximum_match(ArrayList<String> dict , char[] slovobychar,Arr
 				i = remeber;
 				s="";
 			}else {
+			//функцией sravn - сравниваем слова, которые прошли проверку - узнаем наиболее часто встречаемые - также записываем их 
+			//индексы тот,у которого наибольшая частота передается в список. Индекс начинается с него
 			sravn_var = sravn(dict1,wordspovtor);
 			max = sravn_var[0];
 			remeber = Double.parseDouble(sravn_var[1]);
@@ -97,11 +90,12 @@ public static void maximum_match(ArrayList<String> dict , char[] slovobychar,Arr
 //		System.out.println(wordspovtor.toString());
 		System.out.println(vvv.toString());
 		System.out.println(words.toString());
-		words.add(Integer.toString(k));
-		System.out.println(ver(vvv,all));
+		words.add(Double.toString(ver(vvv,all)));
+		//System.out.println(ver(vvv,all));
 
 	}
-public static void Reverse_algorithm(ArrayList<String> dict , char[] slovobychar,ArrayList<String> words,int k1,   HashMap<String,Double>  dict1,Double all ) {
+public static void Reverse_algorithm(ArrayList<String> dict ,
+		char[] slovobychar,ArrayList<String> words,double k1,   HashMap<String,Double>  dict1,Double all ) {
 	String s = "";
 	HashMap<String,Double> wordspovtor = new HashMap<String,Double>();
 	ArrayList<Double> vvv = new ArrayList<Double>();
@@ -137,11 +131,13 @@ public static void Reverse_algorithm(ArrayList<String> dict , char[] slovobychar
 			i = remeber;
 			s="";
 		}else {
-			sravn_var = sravn(dict1,wordspovtor);
-			max = sravn_var[0];
-			remeber = Double.parseDouble(sravn_var[1]);
-			vvv.add(Double.parseDouble(sravn_var[2]));
-			wordspovtor.clear();
+			//функцией sravn - сравниваем слова, которые прошли проверку - узнаем наиболее часто встречаемые - также записываем их 
+			//индексы тот,у которого наибольшая частота передается в список. Индекс начинается с него
+		sravn_var = sravn(dict1,wordspovtor);
+		max = sravn_var[0];
+		remeber = Double.parseDouble(sravn_var[1]);
+		vvv.add(Double.parseDouble(sravn_var[2]));
+		wordspovtor.clear();
 		words.add(max);
 		i = remeber-1;
 		s="";
@@ -150,15 +146,16 @@ public static void Reverse_algorithm(ArrayList<String> dict , char[] slovobychar
 		}
 
 	}
-	System.out.println(wordspovtor.toString());
-	System.out.println(vvv.toString());
+	//System.out.println(wordspovtor.toString());
+	System.out.println("частота "+ vvv.toString());
 	System.out.println(words.toString());
-	words.add(Integer.toString(k1));
-	System.out.println(ver(vvv,all));
+	words.add(Double.toString(ver(vvv,all)));
+	//System.out.println(ver(vvv,all));
 }
 	public static String[] sravn(HashMap<String,Double> dict1,HashMap<String,Double> wordspovtor ) {
 		double cravn  = -1;
 		String Doubles = "";
+		//достаем значения ключей и их частоты. проверяем в основном словре 
 		for(Entry<String, Double> r : wordspovtor.entrySet()) {
 			String pr = r.getKey();
 			System.out.println(pr +" "+dict1.get(pr));
@@ -175,6 +172,29 @@ public static void Reverse_algorithm(ArrayList<String> dict , char[] slovobychar
 		double j = 1;
 		for(Double i : k ) j*=(i/all);
 		return j;
+	}
+	public static ArrayList<String> bidirectional_algorithm(ArrayList<String> dict,char[] slovobychar,HashMap<String,Double>  dict1,double i1) {
+		ArrayList<String> words = new ArrayList<String>();
+	    int k = 0,k1=0;
+	     maximum_match(dict,slovobychar,words,0,dict1,i1);
+	    ArrayList<String> words1 = new ArrayList<String>();
+	     Reverse_algorithm(dict,slovobychar,words1,0,dict1,i1);
+	    //последний элемент является вероятностю наиболее вероятных символов
+	    //System.out.println(words.toString());
+	    //System.out.println(words1.toString());
+	    if(Double.parseDouble(words.get(words.size()-1))==Double.parseDouble(words1.get(words1.size()-1)) ) {
+			System.out.println("Алгоритмы показали одинаковый результат");
+	    	return words;
+	    }
+		if(Double.parseDouble(words.get(words.size()-1))<Double.parseDouble(words1.get(words1.size()-1))) {
+			System.out.println("Алгоритм максимального соответствия дал больше вероятность");
+			return words;
+		}else {
+			System.out.println("Обратный алгоритм максимального соответствия дал меньше неизвестных слов");
+			return words1;
+
+		}
+		
 	}
 	}
 
