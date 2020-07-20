@@ -31,6 +31,7 @@ global laber_sravn1
 global laber_sravn2
 global laber_sravn3
 global laber_sravn4
+
 global k
 k = -1
 men_per = 2
@@ -43,6 +44,7 @@ def openfn_for_rezim():
     img = Image.open(for_rezim1)
     img = img.resize((400, 400), Image.ANTIALIAS)
     img = ImageTk.PhotoImage(img)
+    laber_sravn1.destroy()
     laber_sravn1 = Label(image=img)
     laber_sravn1.image = img
     laber_sravn1.pack()
@@ -55,6 +57,7 @@ def openfn_for_rezim2():
     img = Image.open(for_rezim2)
     img = img.resize((400, 400), Image.ANTIALIAS)
     img = ImageTk.PhotoImage(img)
+    laber_sravn2.destroy()
     laber_sravn2 = Label(image=img)
     laber_sravn2.image = img
     laber_sravn2.pack()
@@ -78,6 +81,7 @@ def shift_fds():
         first = Image.open(first)
         first = first.resize((400, 400), Image.ANTIALIAS)
         first = ImageTk.PhotoImage(first)
+        laber_sravn3.destroy()
         laber_sravn3 = Label(image=first)
         laber_sravn3.image = first
         laber_sravn3.pack()
@@ -86,10 +90,12 @@ def shift_fds():
         second = Image.open(second)
         second = second.resize((400, 400), Image.ANTIALIAS)
         second = ImageTk.PhotoImage(second)
+        laber_sravn4.destroy()
         laber_sravn4 = Label(image=second)
         laber_sravn4.image = second
         laber_sravn4.pack()
         laber_sravn4.place(x=1100, y=500)
+        k = -1
     k = 1
 
 def openfn():
@@ -102,6 +108,7 @@ def open_img():
     img = Image.open(x)
     img = img.resize((400, 400), Image.ANTIALIAS)
     img = ImageTk.PhotoImage(img)
+    panel.destroy()
     panel = Label(image=img)
     panel.image = img
     panel.pack()
@@ -119,6 +126,7 @@ def sobel_fun():
         img = Image.open(x[:-4] + "_sobel" + x[-4:])
         img = img.resize((400, 400), Image.ANTIALIAS)
         img = ImageTk.PhotoImage(img)
+        panel2.destroy()
         panel2 = Label(image=img)
         panel2.image = img
         panel2.pack()
@@ -137,6 +145,7 @@ def previtt_fun():
         img = Image.open(x[:-4] + "_previtt" + x[-4:])
         img = img.resize((400, 400), Image.ANTIALIAS)
         img = ImageTk.PhotoImage(img)
+        panel3.destroy()
         panel3 = Label(image=img)
         panel3.image = img
         panel3.pack()
@@ -155,6 +164,7 @@ def med_fun():
         img = Image.open(x[:-4] + "_med" + x[-4:])
         img = img.resize((400, 400), Image.ANTIALIAS)
         img = ImageTk.PhotoImage(img)
+        panel4.destroy()
         panel4 = Label(image=img)
         panel4.image = img
         panel4.pack()
@@ -173,6 +183,7 @@ def mean_fun():
         img = Image.open(x[:-4] + "_mean" + x[-4:])
         img = img.resize((400, 400), Image.ANTIALIAS)
         img = ImageTk.PhotoImage(img)
+        panel5.destroy()
         panel5 = Label(image=img)
         panel5.image = img
         panel5.pack()
@@ -192,6 +203,7 @@ def gauss_fun():
         img = Image.open(x[:-4] + "_gauss" + x[-4:])
         img = img.resize((400, 400), Image.ANTIALIAS)
         img = ImageTk.PhotoImage(img)
+        panel6.destroy()
         panel6 = Label(image=img)
         panel6.image = img
         panel6.pack()
@@ -207,9 +219,11 @@ def pic_change():
     img = Image.open(x)
     img = img.resize((400, 400), Image.ANTIALIAS)
     img = ImageTk.PhotoImage(img)
+    panel.destroy()
     panel = Label(image=img)
     panel.image = img
-    panel.place(x=100, y=125)
+    panel.pack()
+    panel.place(x=0,y=100)
 
 def show_pic_orig():
     global x
@@ -395,7 +409,7 @@ def switch_pokas():
     btn13.pack()
     btn13.place(x=720, y=735)
     btn14.pack()
-    btn14.place(x=900, y=1000)
+    btn14.place(x=900, y=800)
     btn15.pack()
     btn15.place(x=143, y=550)
     btn16.pack()
@@ -503,7 +517,7 @@ btn13.place(x=720, y=735)
 
 btn14 = Button(text="Сохранение текущего результата и работа с ним",command=pic_change, background="#555",foreground="#ccc", padx="14", pady="7", font="13")
 btn14.pack()
-btn14.place(x=900, y=625)
+btn14.place(x=900, y=800)
 
 btn15 = Button(text="Показать в полном размере",command=show_pic_orig, background="#555",foreground="#ccc", padx="14", pady="7", font="13")
 btn15.pack()
