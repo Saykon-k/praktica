@@ -182,8 +182,6 @@ public static void Reverse_algorithm(ArrayList<String> dict ,
 	    ArrayList<String> words1 = new ArrayList<String>();
 	     Reverse_algorithm(dict,slovobychar,words1,0,dict1,i1);
 	    //последний элемент является вероятностю наиболее вероятных символов
-	    //System.out.println(words.toString());
-	    //System.out.println(words1.toString());
 	    if(Double.parseDouble(words.get(words.size()-1))==Double.parseDouble(words1.get(words1.size()-1)) ) {
 			System.out.println("Алгоритмы показали одинаковый результат");
 	    	return words;

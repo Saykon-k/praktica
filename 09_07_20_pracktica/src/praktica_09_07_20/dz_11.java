@@ -3,9 +3,9 @@ package praktica_09_07_20;
 public class dz_11 {
 
 	public static void main(String[] args) {
-		int matr[][] = {{1,1,1},{1,1,1},{1,1,0}};
-		//System.out.println(gorizont(matr));
-		//System.out.println(vertical(matr));
+		int matr[][] = {{1,1,0},{1,1,0},{1,1,0}};
+		System.out.println(gorizont(matr));
+		System.out.println(vertical(matr));
 		System.out.println(diagonal(matr));
 
 		printmatrix(matr);
