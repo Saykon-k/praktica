@@ -1,0 +1,54 @@
+//	    //использование копий необходимо, так как делается ссылка на объект, который после удаляется
+//	    r.add("w1");
+//	    r.add("w2");
+//	    r.add("w3");
+//	    r.add("w4");
+//	    some.put("m1", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    
+//	    r.add("w2");
+//	    r.add("w4");
+//	    r.add("w1");
+//	    some.put("m2", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	  
+//	    r.add("w3");
+//	    r.add("w1");
+//	    r.add("w2");
+//	    some.put("m3", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    
+//	    r.add("w4");
+//	    r.add("w2");
+//	    r.add("w3");
+//	    some.put("m4", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    
+//	    r.add("m2");
+//	    r.add("m3");
+//	    r.add("m1");
+//	    some.put("w1", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    
+//	    r.add("m3");
+//	    r.add("m1");
+//	    r.add("m4");
+//	    r.add("m2");
+//	    some.put("w2", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    
+//	    r.add("m4");
+//	    r.add("m1");
+//	    r.add("m3");
+//	    some.put("w3", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    
+//	    r.add("m1");
+//	    r.add("m2");
+//	    r.add("m4");
+//	    some.put("w4", (ArrayList<String>) r.clone());
+//	    r.clear();
+//	    match.put("m1", "w3");
+//	    match.put("m2", "w4");
+//	    match.put("m3", "w1");
+//	    match.put("m4", "w2");
